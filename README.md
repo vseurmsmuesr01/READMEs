@@ -230,7 +230,7 @@ As we navigate the complexities of data analytics, we've encountered challenges 
 Your contributions can make a real difference in refining our codes, improving our project's predictive capabilities, and providing new insights into data analytics. We're excited to see the diverse ideas and expertise our community brings to this endeavor.
 
 ## Final Thoughts 
-1. **Which metadata standard did you choose and why?**\
+1. **Which metadata standard did you choose and why?**
    
    Data Documentation Initiative (DDI) was chosen for this README file for several reasons, incluidng but not limited to:
   - DDI allows for detailed documentation of datasets, including study design, data collection methods, questionnaires, and data files.
