@@ -241,7 +241,7 @@ Your contributions can make a real difference in refining our codes, improving o
   - In writing the README, GitHub was used as the platform of choice due to its user-friendly interface, its widespread use in the coding and data science communities, and the abundance of examples it hosts. 
 3. **What was the most challenging part of creating a ReadME file?**
   - Deciding what tool to use to write the README file took me some time. There are so many options in terms of application and online tools, so I navigated through them and finally decided to use GitHub.
-  - Determining the appropriate level of detail for the README was a complex task. In particular, delineating our data preprocessing steps required striking a delicate balance. This phase involves numerous processes, and it was challenging to describe them in a way that was both thorough and succinct.
+  - Determining the appropriate level of detail for the README was a complex task. In particular, delineating our data preprocessing steps required striking a delicate balance. This phase involves numerous processes, and it was challenging to describe them in a way that was both thorough and succinct. I ended up only keeping the steps and ignoring the detailed actions. 
   - As this was a Kaggle competition project, the licensing of the data was unclear. Efforts to trace the data back to the original collector for clarification on licensing were unsuccessful.
   - These datasets were accompanied by an extensive data dictionary handbook. However, since attaching the handbook directly was not feasible, I had to integrate all the pertinent information into this file manually.
   - Learning Markdown was a new experience, requiring me to frequently consult various resources for syntax guidance.
