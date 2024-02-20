@@ -1,5 +1,5 @@
 # README File for Student Dropout Prediction Project 
-**IndividualAssignment2_HUDK4052_YueSummerWu**
+**IndividualAssignment2_HUDK4054_YueSummerWu**
 
 ## README File Creator 
 - **Name:** Summer (Yue) Wu
@@ -61,15 +61,33 @@ These data provide the ability to examine students’ academic progress over tim
 - Certificates or degrees with CIP code for credential earned.
 
 ## Prerequisites
-- **Python:** Python 3.0 or a more recent version is required to ensure compatibility with the utilized syntax and libraries.
+- **Python:** Python 3.6 or a more recent version is required to ensure compatibility with the utilized syntax and libraries.
 - **Jupyter Notebook:** This project utilizes Jupyter Notebook, which can be accessed via Google Colab for those without a local setup. Alternatively, the notebook is available for use if you have configured the Jupyter environment on your local machine.
 - **Python Packages:**
- 
+  ```Python
+  import pandas as pd
+  import numpy as np
+  import matplotlib.pyplot as plt
+  import seaborn as sns
+  from sklearn.model_selection import train_test_split
+  from sklearn.tree import DecisionTreeClassifier
+  from sklearn.ensemble import RandomForestClassifier, BaggingClassifier, AdaBoostClassifier, GradientBoostingClassifier
+  from sklearn.metrics import fbeta_score
+  ```
 
-
-
-## Python Packages 
-
+## Data Access
+- **Liscence:** The datasets provided for the "HUDK 4050 Student Dropout Prediction Challenge" on Kaggle are made available for the specific purpose of participation in the competition without specific liscence. Participants are encouraged to engage with the dataset under the competition rules of:
+  - **Apply Yourself:** Participants are encouraged to use the dataset for learning, exploration, and applying machine learning techniques to solve the challenge.
+  - **Have Fun:** The competition aims to foster a community of learning and innovation, promoting an enjoyable experience for all.
+- **Restrictions:**
+  - **Competition-Specific Use:** The dataset is intended solely for use within the scope of the competition. Any use of the data outside of this context should respect any additional licensing information provided by the competition organizers or Kaggle.
+  - **No Redistribution:** Participants are typically prohibited from redistributing the data directly. Sharing insights, models, and code through Kaggle Notebooks is encouraged, but direct sharing of the dataset files is restricted.
+  - **Compliance with Kaggle's Terms of Service:** All participants must adhere to Kaggle's Terms of Service, which outline acceptable use cases and behaviors on the platform.
+- **Accessing the datasets:**
+  - Navigate to the Competition Page: Visit the [competition's Kaggle page](https://www.kaggle.com/competitions/hudk-4050-student-dropout-prediction-challenge-f23/data).
+  - Kaggle Account: You must have a Kaggle account to proceed. If you do not have one, sign up for free at Kaggle.
+  - Accept the Competition Rules: Before downloading the dataset, you may be prompted to accept the competition's rules.
+  - Download the Dataset: Click on the "Data" tab on the competition page to find and download the dataset files. The data might be provided in multiple files or split between training and test sets.
 
 ## Data Preprocessing 
 - **Merging datasets**
@@ -91,7 +109,7 @@ These data provide the ability to examine students’ academic progress over tim
 ## Modelling  
 Every machine learning model has its own set of benefits and strengths that make them suitable for different tasks. Some models are Decision Trees, Random Forest, KNN, Neural Networks, Gradient Boosting, etc. To identify the optimal model, we splitted the training data into train and test subsets, and trained seven different models, with the majority being ensemble models. The performance of each model was assessed using the F2(F-beta) metric as the evaluation criterion.
 |Rank|Model|F2 Score|
-:----|:----|:-------|
+:----:|:----:|:-------:|
 1|LightGBM|0.9428|
 2|Gradient Boosting|0.9387|
 3|XGBoost|0.9385|
@@ -106,7 +124,7 @@ Upon comparing the F2 scores of the trained models, it was evident that LightGBM
 ## Data Dictionary 
 ### Financial Aid Data 
 |Variable Name|Value Label|Definition|
-|:------------|:----------|:---------|
+|:-----------:|:----------|:---------|
 |ID with leading|Format: Alphanumeric; maximum length 75|Assigned by the institution, StudentID is the unique identifier used to identify a student. StudentID is required on all files containing student information. StudentID is to be consistent across all files and all years for each student. StudentID is treated as sensitive information: It will be encrypted in the database and only shown to authorized users—approved Coffey Data Team members and Frontier Set Site data providers approved by the Frontier Set Site to have access to the Frontier Set DMS--to identify problem records in uploaded files. <br> <br>Notes:<br>1. Leading and trailing empty spaces are ignored.<br>2. StudentID is case sensitive; “StudentOne” and “studentone” are treated as two different values.<br>3. StudentID is required for each student.|
 |cohort|2011-12<br>2012-13<br>2013-14<br>2014-15<br>2015-16<br>2016-17<br> <br>Format: YYYY-YY|Include all undergraduate students who attempted at least one course in a given term, for the first time at your institution. Students may be first-time ever in college or new transfer students into your institution and may be enrolled at any program level, including credential-seeking; college remedial, developmental, or college-preparatory; adult basic skills (ESL, ABE, or ASE/GED); and non-credit vocational students. For non-credit vocational students, only include those who enrolled in courses that could lead to an occupational certificate, industry certificate, or other type of credential of economic value, as well as those students who are simultaneously enrolled in credit-bearing courses.<br> <br>Also include:<br> * Past dual enrollment students who took a course or courses at your institution while simultaneously attending high school. <br>* Fall entry students who enrolled in summer work prior to first term of enrollment with credential-seeking status. Examples of summer work include, but are not limited to, summer bridge programs or developmental/remedial coursework. <br> <br>Exclude students who are: <br> *Non-credit vocational students enrolled in purely personal enrichment courses; <br> *Current dual enrollment students or those taking a course or courses at your institution while simultaneously attending high school. <br> <br> Report data for cohorts of first-time students for each term (including summer) in a given academic year, starting with the fall term of the 2011-12 academic year.<br> <br>Cohort must be assigned for each student.|
 |cohort term|1 = Term 1 <br> 2 = Term 2 <br> 3 = Term 3 <br> 4 = Term 4 <br> 5 = Term 5 <br> 6 = Term 6 <br> 7 = Term 7 <br> <br>Format: Numeric|Cohort term of entry: Term student first enrolled in at least one course. See definition of cohort.<br> <br>CohortTerm must be assigned for each student.<br> <br> Term 1 = Fall term<br>Term 2 = Late fall or winter short/inter-sessions <br>Term 3 = Spring term for institutions on semester schedule; winter term for those on trimesters or quarters <br>Term 4 = Spring term for trimester/quarter institutions<br>Term 5 = Late winter or spring short/inter-sessions <br>Term 6 = Summer I <br>Term 7 = Summer II|
@@ -143,7 +161,7 @@ Upon comparing the F2 scores of the trained models, it was evident that LightGBM
 
 ### Student Static Data 
 |Variable Name|Value Label|Definition|
-|:------------|:----------|:---------|
+|:-----------:|:----------|:---------|
 |StudentID|Format: Alphanumeric; maximum length 75|Assigned by the institution, StudentID is the unique identifier used to identify a student. StudentID is required on all files containing student information. StudentID is to be consistent across all files and all years for each student. StudentID is treated as sensitive information: It will be encrypted in the database and only shown to authorized users—approved Coffey Data Team members and Frontier Set Site data providers approved by the Frontier Set Site to have access to the Frontier Set DMS--to identify problem records in uploaded files. <br> <br>Notes:<br>1. Leading and trailing empty spaces are ignored.<br>2. StudentID is case sensitive; “StudentOne” and “studentone” are treated as two different values.<br>3. StudentID is required for each student.|
 |Cohort|2011-12<br>2012-13<br>2013-14<br>2014-15<br>2015-16<br>2016-17<br> <br>Format: YYYY-YY|Include all undergraduate students who attempted at least one course in a given term, for the first time at your institution. Students may be first-time ever in college or new transfer students into your institution and may be enrolled at any program level, including credential-seeking; college remedial, developmental, or college-preparatory; adult basic skills (ESL, ABE, or ASE/GED); and non-credit vocational students. For non-credit vocational students, only include those who enrolled in courses that could lead to an occupational certificate, industry certificate, or other type of credential of economic value, as well as those students who are simultaneously enrolled in credit-bearing courses.<br> <br>Also include:<br> * Past dual enrollment students who took a course or courses at your institution while simultaneously attending high school. <br>* Fall entry students who enrolled in summer work prior to first term of enrollment with credential-seeking status. Examples of summer work include, but are not limited to, summer bridge programs or developmental/remedial coursework. <br> <br>Exclude students who are: <br> *Non-credit vocational students enrolled in purely personal enrichment courses; <br> *Current dual enrollment students or those taking a course or courses at your institution while simultaneously attending high school. <br> <br> Report data for cohorts of first-time students for each term (including summer) in a given academic year, starting with the fall term of the 2011-12 academic year.<br> <br>Cohort must be assigned for each student.|
 |Cohort Term|1 = Term 1 <br> 2 = Term 2 <br> 3 = Term 3 <br> 4 = Term 4 <br> 5 = Term 5 <br> 6 = Term 6 <br> 7 = Term 7 <br> <br>Format: Numeric|Cohort term of entry: Term student first enrolled in at least one course. See definition of cohort.<br> <br>CohortTerm must be assigned for each student.<br> <br> Term 1 = Fall term<br>Term 2 = Late fall or winter short/inter-sessions <br>Term 3 = Spring term for institutions on semester schedule; winter term for those on trimesters or quarters <br>Term 4 = Spring term for trimester/quarter institutions<br>Term 5 = Late winter or spring short/inter-sessions <br>Term 6 = Summer I <br>Term 7 = Summer II|
@@ -182,7 +200,7 @@ EnrollmentStatus|<br>1 = Entering freshman student<br>2 = Entering transfer stud
 
 ### Student Progress Data 
 |Variable Name|Value Label|Definition|
-|:------------|:----------|:---------|
+|:-----------:|:----------|:---------|
 |StudentID|Format: Alphanumeric; maximum length 75|Assigned by the institution, StudentID is the unique identifier used to identify a student. StudentID is required on all files containing student information. StudentID is to be consistent across all files and all years for each student. StudentID is treated as sensitive information: It will be encrypted in the database and only shown to authorized users—approved Coffey Data Team members and Frontier Set Site data providers approved by the Frontier Set Site to have access to the Frontier Set DMS--to identify problem records in uploaded files. <br> <br>Notes:<br>1. Leading and trailing empty spaces are ignored.<br>2. StudentID is case sensitive; “StudentOne” and “studentone” are treated as two different values.<br>3. StudentID is required for each student.|
 |Cohort|2011-12<br>2012-13<br>2013-14<br>2014-15<br>2015-16<br>2016-17<br> <br>Format: YYYY-YY|Include all undergraduate students who attempted at least one course in a given term, for the first time at your institution. Students may be first-time ever in college or new transfer students into your institution and may be enrolled at any program level, including credential-seeking; college remedial, developmental, or college-preparatory; adult basic skills (ESL, ABE, or ASE/GED); and non-credit vocational students. For non-credit vocational students, only include those who enrolled in courses that could lead to an occupational certificate, industry certificate, or other type of credential of economic value, as well as those students who are simultaneously enrolled in credit-bearing courses.<br> <br>Also include:<br> * Past dual enrollment students who took a course or courses at your institution while simultaneously attending high school. <br>* Fall entry students who enrolled in summer work prior to first term of enrollment with credential-seeking status. Examples of summer work include, but are not limited to, summer bridge programs or developmental/remedial coursework. <br> <br>Exclude students who are: <br> *Non-credit vocational students enrolled in purely personal enrichment courses; <br> *Current dual enrollment students or those taking a course or courses at your institution while simultaneously attending high school. <br> <br> Report data for cohorts of first-time students for each term (including summer) in a given academic year, starting with the fall term of the 2011-12 academic year.<br> <br>Cohort must be assigned for each student.|
 |Cohort Term|1 = Term 1 <br> 2 = Term 2 <br> 3 = Term 3 <br> 4 = Term 4 <br> 5 = Term 5 <br> 6 = Term 6 <br> 7 = Term 7 <br> <br>Format: Numeric|Cohort term of entry: Term student first enrolled in at least one course. See definition of cohort.<br> <br>CohortTerm must be assigned for each student.<br> <br> Term 1 = Fall term<br>Term 2 = Late fall or winter short/inter-sessions <br>Term 3 = Spring term for institutions on semester schedule; winter term for those on trimesters or quarters <br>Term 4 = Spring term for trimester/quarter institutions<br>Term 5 = Late winter or spring short/inter-sessions <br>Term 6 = Summer I <br>Term 7 = Summer II|
@@ -201,5 +219,34 @@ EnrollmentStatus|<br>1 = Entering freshman student<br>2 = Entering transfer stud
 |TermGPA|Continuous<br>-1 – Missing<br> <br>Format: Numeric, X.XX|Student’s grade point average earned for the current term. Based on credits used toward student’s credential and reported on a 4-point scale.<br> <br>Count pass/fail classes, Ds, and retakes in the manner used for student's credential.<br> <br>Include transferred-in courses if they are included in student's GPA for credential.|
 |CumGPA|Continuous<br>-1 - Missing<br> <br>Format: Numeric, X.XX|Student’s cumulative grade point average earned for all terms, up to and including the current term. Based on credits used toward student’s credential and reported on a 4-point scale.<br> <br>Count pass/fail classes, Ds, and retakes in the manner used for student's credential.<br> <br>Include transferred-in courses if they are included in student's GPA for credential.|
 
+## Contributing 
+As we navigate the complexities of data analytics, we've encountered challenges that underscore the pivotal role of data cleaning and feature engineering in predictive modeling. Recognizing these challenges, we invite contributions from the community to enhance our project's data wrangling processes, exploratory data analysis (EDA), imputation strategies, and feature engineering. Here are the potential areas for improvement:
 
-## Potemtial Comtributioms
+- **Data Merging:** We've identified that retaining only data from the final semester may lead to information loss. Alternative methods for merging data could provide a more holistic view of student performance over time.
+- **Exploratory Data Analysis (EDA):** Our EDA phase, particularly the interpretation of heatmaps, highlighted areas of confusion. Insights into better leveraging these analyses for data cleaning and understanding would be invaluable.
+- **Imputation of Missing Data:** Our approach to handling missing data, especially for sensitive columns like race, needs refinement. We are looking for more sophisticated imputation methods and thoughtful consideration of how to address these gaps.
+- **Feature Engineering:** There is always room for engineering more features. Innovative ideas for new features that could improve the prediction models are highly encouraged.
+
+Your contributions can make a real difference in refining our codes, improving our project's predictive capabilities, and providing new insights into data analytics. We're excited to see the diverse ideas and expertise our community brings to this endeavor.
+
+
+
+## Final Thoughts 
+1. **Which metadata standard did you choose and why?**\
+   
+   Data Documentation Initiative (DDI) was chosen for this README file for several reasons, incluidng but not limited to:
+  - DDI allows for detailed documentation of datasets, including study design, data collection methods, questionnaires, and data files.
+  - DDI covers the entire lifecycle of data, from planning and collection to preservation and reuse. This holistic approach ensures that data is well-managed and accessible over the long term.
+  - By adhering to a widely recognized standard, DDI facilitates data sharing and interoperability between different systems and platforms. 
+2. **Which template/software did you use?**
+  - This README file was written by following the content guidelines recommended by Cornell University. 
+  - In writing the README, GitHub was used as the platform of choice due to its user-friendly interface, its widespread use in the coding and data science communities, and the abundance of examples it hosts. 
+3. **What was the most challenging part of creating a ReadME file?**
+  - Deciding what tool to use to write the README file took me some time. There are so many options in terms of application and online tools, so I navigated through them and finally decided to use GitHub.
+  - Determining the appropriate level of detail for the README was a complex task. In particular, delineating our data preprocessing steps required striking a delicate balance. This phase involves numerous processes, and it was challenging to describe them in a way that was both thorough and succinct.
+  - As this was a Kaggle competition project, the licensing of the data was unclear. Efforts to trace the data back to the original collector for clarification on licensing were unsuccessful.
+  - These datasets were accompanied by an extensive data dictionary handbook. However, since attaching the handbook directly was not feasible, I had to integrate all the pertinent information into this file manually.
+  - Learning Markdown was a new experience, requiring me to frequently consult various resources for syntax guidance.
+
+## References 
+
