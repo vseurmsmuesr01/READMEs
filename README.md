@@ -61,8 +61,8 @@ These data provide the ability to examine students’ academic progress over tim
 - Certificates or degrees with CIP code for credential earned.
 
 ## Prerequisites
-- **Python:** To ensure compatbility with the syntax and libraries used, Python 3.0 or higher version is needed.
-- **Jupyter Notebook:**
+- **Python:** Python 3.0 or a more recent version is required to ensure compatibility with the utilized syntax and libraries.
+- **Jupyter Notebook:** This project utilizes Jupyter Notebook, which can be accessed via Google Colab for those without a local setup. Alternatively, the notebook is available for use if you have configured the Jupyter environment on your local machine.
 - **Python Packages:**
  
 
