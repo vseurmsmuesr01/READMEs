@@ -59,8 +59,35 @@ These data provide the ability to examine students’ academic progress over tim
 - Certificates or degrees with CIP code for credential earned.
 
 ## Prerequisites 
+
+
 ## Python Packages 
-## Methodology 
+
+
+## Data Preprocessing 
+### Exploratory Data Analysis 
+### Merging Datasets
+### Feature Reduction 
+### Feature Engineering 
+### Imputing non-labled missing values
+### Imputing values labled as "not applicable"
+### Imputing labeled missing values
+
+## Trained Models
+1. Random Forest
+2. Bagging
+3. Ada Nppstomg
+4. Gradient Boosting
+5. XGBoost
+6. Neural Networks
+7. LighGBM
+
+## Results and Conclusion 
+|Model|F2 Score|
+|:----|:-------|
+
+
+
 
 ## Data Dictionary 
 ### Financial Aid Data 
@@ -161,4 +188,4 @@ EnrollmentStatus|<br>1 = Entering freshman student<br>2 = Entering transfer stud
 |CumGPA|Continuous<br>-1 - Missing<br> <br>Format: Numeric, X.XX|Student’s cumulative grade point average earned for all terms, up to and including the current term. Based on credits used toward student’s credential and reported on a 4-point scale.<br> <br>Count pass/fail classes, Ds, and retakes in the manner used for student's credential.<br> <br>Include transferred-in courses if they are included in student's GPA for credential.|
 
 
-
+## Potemtial Comtributioms
