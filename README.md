@@ -22,6 +22,7 @@
 - **Instructor:** Dr. JD Jayaraman, jj2797@tc.columbia.edu
 - **Institution:** Teachers College, Columbia University
 - **Research Period:** 10/24/2023 - 11/21/2023
+- **DOI:** Not assigned yet
 
 ## Data Overview 
 In this project, we utilized three comprehensive datasets to facilitate the prediction of student dropouts, namely Financial Aid Data, Student Progress Data, and Student Static Data. Each of them offers unique insights into different aspects of the student profile. 
