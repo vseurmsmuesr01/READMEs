@@ -30,16 +30,18 @@ In this project, we utilized three comprehensive datasets to facilitate the pred
 |Financial Aid Data|Data about the financial assistance received by students, categorized by various types of financial aid.|
 |Student Static Data|Data that do not change over time, such as demographics and academic background.|
 |Student Progress Data|Data that reflect students’ academic activity, or progress, for each term enrolled.|
+|DropoutTrainLabels|Training data indicating the dropout status of students.|
+|TestIDs|IDs of students for whom dropout predictions are required.|
 
 ### Financial Aid Data 
 This Excel dataset encompasses an array of financial aid information for students spanning from 2012 to 2017. It is structured to provide a multi-dimensional view of financial aid distribution through various lenses including: 
 - Demograhics such as marital status.
 - Adjusted income information including adjusted gross income and parent adjusted gross income.
-- Parents' highest degree
-- Housing status, on campus, off campus, or with parents
-- Amount of loans received from 2012 to 2017
-- Amount of scholarship received from 2012 to 2017
-- Amount of federal work study received from 2012 to 2017
+- Parents' highest degree.
+- Housing status, on campus, off campus, or with parents.
+- Amount of loans received from 2012 to 2017.
+- Amount of scholarship received from 2012 to 2017.
+- Amount of federal work study received from 2012 to 2017.
 
 ### Student Static Data 
 The Student Static Data consist of a comprehensive dataset gathered once for each entering cohort, spanning from Fall 2011 to Spring 2016, across eleven distinct CSV files. Each file encompasses a variety of information including:
@@ -58,36 +60,48 @@ These data provide the ability to examine students’ academic progress over tim
 - Educational intent or objective, and type of degree sought.
 - Certificates or degrees with CIP code for credential earned.
 
-## Prerequisites 
+## Prerequisites
+- **Python:** To ensure compatbility with the syntax and libraries used, Python 3.0 or higher version is needed.
+- **Jupyter Notebook:**
+- **Python Packages:**
+ 
+
 
 
 ## Python Packages 
 
 
 ## Data Preprocessing 
-### Exploratory Data Analysis 
-### Merging Datasets
-### Feature Reduction 
-### Feature Engineering 
-### Imputing non-labled missing values
-### Imputing values labled as "not applicable"
-### Imputing labeled missing values
+- **Merging datasets**
+  - Standardized variable names across the three data types to ensure consistency.
+  - Merged datasets within each category.
+  - Integrated the three distinct datasets into a single, comprehensive dataset.
+- **Reduce features**
+  - Droped features with one unique value.
+  - Dropped features with 100% null values.
+  - Dropped irrelevant features.
+- **Data imputation**
+  - Imputed labeled missing values (-1). 
+  - Imputed non-labeled missing values (NaN). 
+  - Imputed data labeled as "not applicable" (-2).
+- **Feature engineering**
+  - Dummy-coded categorical variables
+  - Created new features related to Financial Aid Data and GPA.
 
-## Trained Models
-1. Random Forest
-2. Bagging
-3. Ada Nppstomg
-4. Gradient Boosting
-5. XGBoost
-6. Neural Networks
-7. LighGBM
+## Modelling  
+Every machine learning model has its own set of benefits and strengths that make them suitable for different tasks. Some models are Decision Trees, Random Forest, KNN, Neural Networks, Gradient Boosting, etc. To identify the optimal model, we splitted the training data into train and test subsets, and trained seven different models, with the majority being ensemble models. The performance of each model was assessed using the F2(F-beta) metric as the evaluation criterion.
+|Rank|Model|F2 Score|
+:----|:----|:-------|
+1|LightGBM|0.9428|
+2|Gradient Boosting|0.9387|
+3|XGBoost|0.9385|
+4|Neural Networks|0.9349|
+5|Random Forest|0.9328|
+6|Ada Boosting|0.9319|
+7|Bagging|0.9306|
 
-## Results and Conclusion 
-|Model|F2 Score|
-|:----|:-------|
-
-
-
+## Evaluation of Test Data
+Upon comparing the F2 scores of the trained models, it was evident that LightGBM exhibited the best performance, achieving a score of 0.9428. When applying this trained model to predict the test data (the CSV file named "TestIDs", the obtained score was 0.9269.
 
 ## Data Dictionary 
 ### Financial Aid Data 
