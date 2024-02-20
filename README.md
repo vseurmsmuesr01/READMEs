@@ -58,6 +58,10 @@ These data provide the ability to examine students’ academic progress over tim
 - Educational intent or objective, and type of degree sought.
 - Certificates or degrees with CIP code for credential earned.
 
+## Prerequisites 
+## Python Packages 
+## Methodology 
+
 ## Data Dictionary 
 ### Financial Aid Data 
 |Variable Name|Value Label|Definition|
