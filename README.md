@@ -229,8 +229,6 @@ As we navigate the complexities of data analytics, we've encountered challenges 
 
 Your contributions can make a real difference in refining our codes, improving our project's predictive capabilities, and providing new insights into data analytics. We're excited to see the diverse ideas and expertise our community brings to this endeavor.
 
-
-
 ## Final Thoughts 
 1. **Which metadata standard did you choose and why?**\
    
@@ -249,4 +247,7 @@ Your contributions can make a real difference in refining our codes, improving o
   - Learning Markdown was a new experience, requiring me to frequently consult various resources for syntax guidance.
 
 ## References 
-
+Coffey Consulting. (2017, Janurary). 2011-2017 cohorts financial aid and fafsa data. Retrieved February 19th, 2024 from https://www.kaggle.com/competitions/hudk-4050-student-dropout-prediction-challenge-f23/data <br>
+Coffey Consulting. (2017, Janurary). Student progress data. Retrieved February 19th, 2024 from https://www.kaggle.com/competitions/hudk-4050-student-dropout-prediction-challenge-f23/data <br>
+Coffey Consulting. (2017, Janurary). Student static data. Retrieved February 19th, 2024 from https://www.kaggle.com/competitions/hudk-4050-student-dropout-prediction-challenge-f23/data <br>
+Cornell Data Service (n.d.). *Guide to Writing “Readme” Style Metadata*. Cornell University. https://data.research.cornell.edu/data-management/sharing/readme/#1-recommended-content
